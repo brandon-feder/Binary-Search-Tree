@@ -210,6 +210,7 @@ void MovieTree::deleteMovie(std::string title)
                     parent->leftChild = node->rightChild; // Set the parents right child to be the nodes left child
                 }
                 node->rightChild->parent = parent; // Set the nodes rightChild's parent to be the nodes parent
+                node->rightChild->leftChild = node->leftChild;
 
                 delete node; // Delete the node
             }
